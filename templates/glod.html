@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title> Gold Price Prediction</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Style.css')}}">
+
+    <style>
+        body {
+            background: #ffffff;
+            background: linear-gradient(to left, #0b0000 0%, #ffffff 100%);
+
+
+
+        }
+        h1{
+            text-align: center;
+            font-size: 60px;
+            color: #ef0303;
+            font-style: italic;
+            }
+
+        footer a {
+            color: #ef0303;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .centerdiv {
+            height: 15vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centerdiv a {
+            height: 30px;
+            width: 30px;
+            background-color: #f5f6fa;
+            border-radius: 50px;
+            text-align: center;
+            margin: 5px;
+            line-height: 30px;
+            box-shadow: 1px 4px 2px 2px #dcdde1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .centerdiv a i {
+            transition: all 0.3s linear;
+        }
+
+        .centerdiv a:hover i {
+            transform: scale(1.5);
+            color: #f5f6fa;
+        }
+
+        .centerdiv a:before {
+            content: "";
+            width: 120%;
+            height: 120%;
+            position: absolute;
+            top: 90%;
+            left: -50%;
+            transform: rotate(60deg);
+        }
+
+        .centerdiv a:hover:before {
+            animation: socialicons 0.8s 1;
+            animation-fill-mode: forwards;
+        }
+
+        function myFunction() {
+        alert("Hello! I am an alert box!");
+      }
+
+      .header {
+  padding: 10px;
+  text-align: center;
+  background:black;
+}
+nav ul{
+flex:1;
+text-align: right;
+padding-right: 30px;
+}
+nav ul li{
+
+    display: inline-block;
+    list-style: none;
+    margin: 1px 30px;
+    font-size: 20px;
+
+
+}
+      </style>
+    <script>
+      function myFunction() {
+      alert("Reset values in form");
+      }
+      </script>
+
+
+
+
+
+</head>
+
+<body>
+<h1><b><u>Gold Price Prediction</u></b></h1>
+
+    <div class="wrapper">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-10 col-sm-6 mx-auto">
+                    <form class="" action="/predict" method="post">
+                        <div class="form-group">
+                            <input type="text" name="spx" id="spx" class="form-control" required >
+                            <label for="spx" class="ph-area">SPX</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="uso" id="uso" class="form-control" required >
+                            <label for="uso" class="ph-area">US oil</label>
+                        </div>
+
+                        <div class="form-group">
+                                <input type="float" name="slv" id="slv" class="form-control" required>
+                                <label for="slv" class="ph-area">Silver</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="Eur_Usd" id="Eur_Usd"
+                                    class="form-control" required >
+                                <label for="Eur_Usd" class="ph-area">EUR/US</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Submit">
+                                <input type="reset" class="btn btn-danger"  onclick="myFunction()" value="Reset">
+                            </div>
+                    </form>
+                    <h2>Gold Price Prediction:  {{r}}</h2>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
